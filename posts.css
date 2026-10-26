@@ -1,0 +1,317 @@
+/* BODY */
+
+body {
+    background-color: rgb(84, 31, 209);
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(240, 240, 255); /* cor padrão do texto no body */
+}
+
+/* BARRA DE NAVEGAÇÃO */
+
+.static-navigation {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 15);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.static-navigation a {
+    color:rgb(240, 240, 255);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.static-navigation a:hover {
+    color: rgb(160, 130, 255);
+}
+
+.static-navigation button {
+    color: rgb(240, 240, 255);
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: inherit;
+}
+
+.static-navigation button:hover {
+    color: rgb(160, 130, 255);
+}
+
+    /* BARRA DE PESQUISA */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.search-container label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.search-container input {
+    background-color: rgb(240, 240, 255);
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px; /* Arredonda só o canto esquerdo */
+    outline: none;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    background-color: rgb(84, 31, 209);
+    color: white;
+    border: none;
+    padding: 0 22px; 
+    border-radius: 0 4px 4px 0; /* Arredonda só o canto direito */
+    cursor: pointer;
+    font-weight: bold;
+    height: 36px;
+    white-space: nowrap;
+}
+
+.search-container button:hover {
+    background-color: rgb(110, 50, 240);
+}
+
+/* REGRA GERAL DO CONTAINER PRINCIPAL */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FEED DE POSTS */
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* faz o feed ocupar o espaço que tiver */
+    max-width: 650px;
+}
+
+.post {
+    background-color: rgb(32, 12, 78);
+    color: rgb(240, 240, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    min-width: 250px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Pelo que entendi, vai garantir que os elementos não saiam da margem */
+}
+
+.post:hover {
+    cursor: pointer;
+}
+
+.post h1 {
+    text-align: center;
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.post p {
+    text-align: justify;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.post p,
+#conteudo-expandido {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.post-image,
+#imagem-expandida {
+    display: block;
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 10px auto;
+}
+
+#imagem-expandida[hidden] {
+    display: none;
+}
+
+.post-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(240, 240, 255, 0.2);
+}
+
+.post-actions button {
+    background-color: rgb(84, 31, 209);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.post-actions button:hover {
+    background-color: rgb(110, 50, 240);
+}
+
+/* CRIAR POST */
+dialog {
+    background-color: rgb(32, 12, 78);
+    color: rgb(240, 240, 255);
+    border: 1px solid rgb(160, 130, 255);
+    border-radius: 10px;
+    padding: 25px;
+    width: min(600px, calc(100% - 50px));
+    max-height: 85vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 15, 0.85);
+}
+
+#post-dialog[open] {
+    width: min(900px, calc(100% - 30px));
+    max-height: 95vh;
+}
+
+dialog h1,
+dialog h2 {
+    overflow-wrap: anywhere;
+}
+
+dialog textarea,
+dialog input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+}
+
+dialog textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+dialog button {
+    background-color: rgb(84, 31, 209);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 14px;
+    margin: 4px 4px 4px 0;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background-color: rgb(110, 50, 240);
+}
+
+#lista-comentarios {
+    padding-left: 20px;
+}
+
+#lista-comentarios li {
+    overflow-wrap: anywhere;
+    margin-bottom: 10px;
+}
+
+/* BARRA LATERAL DE POSTS RECOMENDADOS */
+
+.sidebar-recommendations {
+    background-color: rgb(0, 0, 15);
+    color: rgb(240, 240, 255);
+    width: 300px;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.sidebar-recommendations ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-recommendations li {
+    margin-top: 12px;
+}
+
+.sidebar-recommendations a {
+    color: rgb(160, 130, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-recommendations a:hover {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERY - PERMITE DINAMISMO PRA DISPOSITIVOS EM TELAS MENORES */
+
+@media (max-width: 650px) {
+    .static-navigation {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        gap: 12px; /* Cria um espaçamento uniforme entre as linhas */
+        align-items: stretch; /* Faz os elementos ocuparem toda a largura disponível */
+        text-align: center;
+    }
+
+    .search-container {
+        margin: 0; /* Remove as margens laterais que empurravam o campo no desktop */
+        max-width: 100%; /* Permite que a barra use todo o espaço do celular */
+    }
+    
+    .static-navigation a {
+        padding: 5px 0; /* Ajusta o clique dos links no celular */
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 10px; /* Reduz o padding nas laterais do celular para ganhar espaço */
+    }
+
+    .sidebar-recommendations {
+        width: 100%;
+    }
+}

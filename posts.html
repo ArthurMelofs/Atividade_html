@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="posts.css">
+</head>
+<body>
+    <nav class="static-navigation">
+        <a>Home</a>
+        <a>Posts</a>
+        <form class="search-container" action="/buscar" method="get">
+            <label for="barra-pesquisa">Pesquisar:</label>
+            <input
+             type="search"
+             id="barra-pesquisa"
+             name="q"
+             placeholder="Procure por posts!"
+             required>
+             <button type="submit">Buscar</button>
+        </form>
+        <button type="button" id="btn-criar">Criar</button>
+    </nav>
+
+    <main class="main-container">
+        <section class="feed" id="feed">
+            <article class="post" data-post-id="1">
+                <h1>Um dia tranquilo</h1>
+                <p>Às vezes, tudo o que precisamos é de um dia tranquilo, uma boa música e um pouco de tempo para nós mesmos.</p>
+                <img
+                    class="post-image"
+                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900"
+                    alt="Paisagem tranquila ao nascer do sol"
+                >
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+
+            <article class="post" data-post-id="2">
+                <h1>Minha leitura atual</h1>
+                <p>Comecei a ler um livro novo recentemente. Ainda estou no início, mas a história já conseguiu prender minha atenção.</p>
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+
+            <article class="post" data-post-id="3">
+                <h1>Uma descoberta interessante</h1>
+                <p>Hoje descobri algo novo enquanto navegava pela internet. É interessante como sempre existe alguma coisa diferente para aprender.</p>
+                <img
+                    class="post-image"
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900"
+                    alt="Placa eletrônica com componentes tecnológicos"
+                >
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+
+            <article class="post" data-post-id="4">
+                <h1>Recomendação de música</h1>
+                <p>Encontrei uma música que combina perfeitamente com uma tarde chuvosa. Qual música vocês gostam de ouvir nesses momentos?</p>
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+
+            <article class="post" data-post-id="5">
+                <h1>Pequenas conquistas</h1>
+                <p>Consegui terminar uma tarefa que estava adiando há algum tempo. Pode parecer pouco, mas tirar algo da lista de pendências dá uma satisfação enorme.</p>
+                <img
+                    class="post-image"
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900"
+                    alt="Mesa de trabalho organizada"
+                >
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+
+            <article class="post" data-post-id="6">
+                <h1>Qual seria sua escolha?</h1>
+                <p>Se você pudesse passar uma semana em qualquer lugar, escolheria uma cidade movimentada, uma praia tranquila ou uma pequena vila nas montanhas?</p>
+                <div class="post-actions">
+                    <button type="button" class="btn-like">
+                        Curtir <span class="like-count">0</span>
+                    </button>
+                    <button type="button" class="btn-comment">Comentar</button>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar-recommendations">
+            <ul>
+                <li><a>Post interessante 1</a></li>
+                <li><a>Post interessante 2</a></li>
+                <li><a>Post interessante 3</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <dialog id="post-dialog">
+        <button type="button" id="btn-fechar-post">
+            X
+        </button>
+
+        <article id="post-expandido">
+            <h1 id="titulo-expandido"></h1>
+            <p id="conteudo-expandido"></p>
+            <img id="imagem-expandida" alt="" hidden>
+        </article>
+
+        <section id="comentarios">
+            <h2>Comentários</h2>
+
+            <ul id="lista-comentarios"></ul>
+
+            <form id="form-comentario">
+                <label for="texto-comentario">
+                    Escreva seu comentário:
+                </label>
+
+                <textarea
+                    id="texto-comentario"
+                    required
+                    maxlength="500"
+                ></textarea>
+
+                <button type="submit">Enviar comentário</button>
+            </form>
+        </section>
+    </dialog>
+
+    <dialog id="criar-dialog">
+        <h2>Criar publicação</h2>
+
+        <form id="form-criar-post">
+            <label for="titulo-post">Título:</label>
+            <input
+                type="text"
+                id="titulo-post"
+                required
+                maxlength="100"
+            >
+
+            <label for="conteudo-post">Conteúdo:</label>
+            <textarea
+                id="conteudo-post"
+                required
+                maxlength="5000"
+            ></textarea>
+
+            <label for="imagem-post">Imagem (opcional):</label>
+            <input
+                type="file"
+                id="imagem-post"
+                accept="image/*"
+            >
+
+            <button type="submit">Publicar</button>
+            <button type="button" id="btn-cancelar-criacao">
+                Cancelar
+            </button>
+        </form>
+    </dialog>
+
+    <script src="posts.js"></script>
+</body>
+</html>
