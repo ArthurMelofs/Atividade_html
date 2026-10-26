@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>Configurações | teste</header>
+
+    <nav arial-label = "Menu de navegaçaõ">
+
+        <a href = "geral">Geral</a>
+        <a href = "postagens">Postagens</a>
+        <a href = "categorias">Categorias</a>
+        <a href = "reacoes">Reações</a>
+        <a href = "notificações">Notificações</a>
+
+    </nav>
+
+    <main>
+
+        <section id = "geral">
+
+            <h2>Configurações gerais</h2>
+
+            <p>Aqui você gerencia informações e questões de privacidade
+                da sua comunnidade
+            </p>
+
+            <form>
+
+                <fieldset>
+                    <legend>Informações de indentificação</legend>
+
+
+                    <label for = "nome"> Nome da comunidade</label>
+
+                    <input type = "text"
+                    id = "nome"
+                    name = "nome"
+                    value = "form test">
+
+                    <label for = "descricao"> Descrição</label>
+
+                    <textarea 
+                    id = "descricao"
+                    name = "descricao"
+                    rows="3">Uma comunidade para compartilhar ideia e conversar</textarea>
+
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Privacidade</legend>
+
+
+                    <label for = "publica">
+
+                    <input type = "checkbox"
+                    id = "publica"
+                    name = "publica"
+                    checked>
+
+                    Comunidade pública</label>
+
+                    <P> permite os membros visualizarem a comunidade e seus conteúdos</P>
+
+                </fieldset>
+ 
+            </form>
+
+        </section>
+
+        <section id = "postagens">
+
+            <h2>Postagens</h2>
+
+            <p>Define como os membros podem participar das postagens da sua comunidade</p>
+
+            <article>
+
+                <h3>Diretrizes da comunidade</h3>
+
+                <p>Respeito aos outros membros e mantenha os posts relacionados com o tema</p>
+
+                <details>
+
+                    <summary>Consultar regras de postagem</summary>
+
+                    <ul>
+                        <li>Não publique conteúdo ofensivo ou abusivo</li>
+                        <li>Mantenha os posts relacionados com o tema da comunidade</li>
+                        <li>Respeite os outros membros e evite conflitos</li>
+                    </ul>
+
+                </details>
+
+            </article>
+
+            <form>
+
+                <fieldset>
+                    <legend> Permissões de postagem</legend>
+
+                    <label for = "comentarios">
+                        <input tyepe = "checkbox"
+                        id = "comentarios"
+                        name = "comentarios"
+                        checked>
+                        Permitir comentários</label>
+
+                    <label for = "imagens">
+
+                        <input type = "Checkbox"
+                        id = "imagens"
+                        name = "imagens"
+                        checked>
+                        Permitir imagens
+                    </label>
+
+                </fieldset>
+            </form>
+
+        </section>
+
+
+        <section id = "categorias">
+
+            <h2>Categorias</h2>
+
+            <p>Gerencie as categorias da sua comunidade</p>
+
+            <form>
+
+                <fieldset>
+                    <legend>Categorias disponiveis</legend>
+
+                    <label for = "discussao">Nome da categoria
+
+                        <input type = "checkbox"
+                        id = "discussao"
+                        checked>Discussão 
+                    </label>
+
+                    <label for = "noticias">
+
+                        <input type = "checkbox"
+                        id = "noticias"
+                        checked>Notícias 
+                    </label>
+
+                    <label for = "duvidas">
+
+                        <input type = "checkbox"
+                        id = "duvidas"
+                        checked>Dúvidas 
+                    
+                    </label>
+
+                    <label for = "memes">
+
+                        <input type = "checkbox"
+                        id = "memes"
+                        checked>Memes
+
+                    </label>
+
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Criação de categoria</legend>
+
+                    <label for = "nova-categoria">
+
+                        <input type = "checbox"
+                        id = "nova-categoria">Permitir nova categoria
+                    </label>
+
+                    
+                </fieldset>
+
+            </form>
+
+        </section>
+
+        <section id = "reacoes">
+
+            <h2>Reações</h2>
+
+            <p>Gerencie as reações da sua comunidade</p>
+
+            <form>
+
+                <fieldset>
+                    <legend>Reações disponiveis</legend>
+
+                    <label for = "curtir">
+
+                        <input type = "checkbox"
+                        id = "curtir"
+                        checked>Curtir
+                    </label>
+
+                    <label for = "amei">
+
+                        <input type = "checkbox"
+                        id = "amei"
+                        checked>Amei
+                    </label>
+
+                    <label for = "engracado">
+
+                        <input type = "checkbox"
+                        id = "engracado"
+                        checked>Engraçado
+                    
+                    </label>  
+
+                </fieldset>
+            </form>
+
+        </section>
+
+
+        <section id="notificacoes">
+
+            <h2>Notificações</h2>
+
+            <p>Personalize os avisos recebidos pela comunidade</p>
+
+            <form>
+                <fieldset>
+                    
+                    <legend>Preferências de notificação</legend>
+
+                    <label for ="novas-postagens">
+
+                        <input type = "checkbox"
+                        id = "novas-postagens"
+                        checked>Novas postagens
+                    </label>
+
+                    <label for ="novos-comentarios">
+
+                        <input type = "checkbox"
+                        id = "novos-comentarios"
+                        checked>Novos comentários
+                    </label>
+
+                    <label for = "mencoes">
+
+                        <input type = "checkbox"
+                        id = "mencoes"
+                        checked>Menções
+
+                    </label>
+
+                </fieldset>
+
+            </form>
+
+
+        </section>
+
+        <aside> 
+
+            <h2>Informações adicionais</h2>
+
+            <p>As configurações dessa página representam as preferências da comunidade.</p>
+
+            <p>Algumas alterações dependem da permissão do administrador.</p>
+
+        </aside>
+
+        <button type = "button"> Salvar configurações</button>
+
+    </main>
+
+    <footer>
+
+        <p> Forum teste</p>
+        <p> Prototipo de html e css</p>
+
+    </footer>
+
+    
+</body>
+</html>
