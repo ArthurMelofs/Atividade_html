@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(49, 129, 235);
+}
+
+.topo{
+    width: 100%;
+    height: 200px;
+    border: 4px solid #8513f0;
+    background-image: url(floresta.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.confg{
+    float: right;            /* Move o conjunto de botões para a direita */
+    margin-top: 30px;        /* Define a distância do topo para ambos */
+    margin-right: 70px;      /* Distância da margem direita do ecrã */
+    display: flex;           /* Garante que ficam perfeitamente lado a lado */
+    gap: 3px;                /* Mantenha 0px se quiser colados ou ex: 4px para um pequeno espaço */
+    border: 2px solid #fff;
+}
+
+.sair{
+    width: 4%;
+    background-color: rgb(230, 9, 9);
+    margin-left: 1099px;
+    margin-top: 30px;
+    border: 2px solid #fff;
+}
+
+
+
+.circulo{
+    border: 4px solid #000;
+    border-radius: 50%;
+    background-image: url(foto.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+}
+
+.conta{
+    background-color: rgb(85, 22, 202);
+}
+
+
+.a, .b, .c{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    text-align: left;
+}
+
+.a{ background-color: #fff;}
+.b{ background-color: #fff;}
+.c{ background-color: #fff;}
