@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Fórum Teste</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="home.html">Fórum Teste</a>
+        <nav class="static-navigation" aria-label="Navegação principal">
+            <a class="active" href="home.html">Home</a>
+            <a href="posts.html">Posts</a>
+            <a href="configuracoes.html">Configurações</a>
+            <form class="search-container" id="form-pesquisa" role="search">
+                <label for="barra-pesquisa">Pesquisar:</label>
+                <input type="search" id="barra-pesquisa" name="q" placeholder="Procure por posts!" required>
+                <button type="submit">Buscar</button>
+            </form>
+            <button type="button" id="btn-criar">Criar publicação</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <aside class="sidebar sidebar-left">
+            <section class="profile-card">
+                <div class="profile-cover"></div>
+                <div class="avatar" aria-hidden="true">FT</div>
+                <h2>Olá, <a href="perfil.html">visitante</a>!</h2>
+                <p>Bem-vindo à sua comunidade.</p>
+            </section>
+            <section class="sidebar-panel">
+                <h2>Atalhos</h2>
+                <a href="home.html">⌂ Página inicial</a>
+                <a href="posts.html">▤ Todas as postagens</a>
+                <a href="configuracoes.html">⚙ Configurações</a>
+            </section>
+            <section class="sidebar-panel">
+                <h2>Categorias</h2>
+                <button class="category-filter active" type="button" data-category="Todas">Todas</button>
+                <button class="category-filter" type="button" data-category="Discussão">Discussão</button>
+                <button class="category-filter" type="button" data-category="Notícias">Notícias</button>
+                <button class="category-filter" type="button" data-category="Dúvidas">Dúvidas</button>
+                <button class="category-filter" type="button" data-category="Memes">Memes</button>
+            </section>
+        </aside>
+
+        <section class="feed-column">
+            <section class="welcome-banner">
+                <p class="eyebrow">SUA COMUNIDADE, SUAS IDEIAS</p>
+                <h1>O que está acontecendo?</h1>
+                <p>Compartilhe ideias, descubra novidades e converse com a comunidade.</p>
+                <button type="button" id="btn-criar-banner">Criar uma publicação</button>
+            </section>
+
+            <form class="quick-post" id="form-post-rapido">
+                <div class="mini-avatar" aria-hidden="true">V</div>
+                <label class="sr-only" for="texto-rapido">Compartilhe uma ideia</label>
+                <input id="texto-rapido" type="text" placeholder="Compartilhe uma ideia com a comunidade..." maxlength="500" required>
+                <button type="submit">Publicar</button>
+            </form>
+
+            <div class="feed-heading">
+                <h2>Feed da comunidade</h2>
+                <label for="ordenacao" class="sr-only">Ordenar publicações</label>
+                <select id="ordenacao">
+                    <option value="recentes">Mais recentes</option>
+                    <option value="populares">Mais curtidas</option>
+                </select>
+            </div>
+
+            <section class="feed" id="feed" aria-live="polite">
+                <article class="post" data-post-id="1" data-category="Discussão" data-likes="12">
+                    <div class="post-author"><div class="mini-avatar">M</div><div><strong>Marina Costa</strong><span>Há 15 minutos · Discussão</span></div></div>
+                    <h2>Um dia tranquilo</h2>
+                    <p>Às vezes, tudo o que precisamos é de um dia tranquilo, uma boa música e um pouco de tempo para nós mesmos.</p>
+                    <img class="post-image" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900" alt="Paisagem tranquila ao nascer do sol">
+                    <div class="post-actions">
+                        <button type="button" class="btn-like" aria-pressed="false">♡ Curtir <span class="like-count">12</span></button>
+                        <button type="button" class="btn-comment">Comentar</button>
+                        <span class="post-category">Discussão</span>
+                    </div>
+                    <div class="inline-comments" hidden></div>
+                </article>
+
+                <article class="post" data-post-id="2" data-category="Dúvidas" data-likes="8">
+                    <div class="post-author"><div class="mini-avatar">R</div><div><strong>Rafael Lima</strong><span>Há 42 minutos · Dúvidas</span></div></div>
+                    <h2>Qual hábito você gostaria de desenvolver?</h2>
+                    <p>Estou tentando organizar melhor minha rotina e queria conhecer hábitos simples que ajudam no dia a dia. O que funciona para vocês?</p>
+                    <div class="post-actions">
+                        <button type="button" class="btn-like" aria-pressed="false">♡ Curtir <span class="like-count">8</span></button>
+                        <button type="button" class="btn-comment">Comentar</button>
+                        <span class="post-category">Dúvidas</span>
+                    </div>
+                    <div class="inline-comments" hidden></div>
+                </article>
+
+                <article class="post" data-post-id="3" data-category="Notícias" data-likes="21">
+                    <div class="post-author"><div class="mini-avatar">A</div><div><strong>Ana Souza</strong><span>Há 1 hora · Notícias</span></div></div>
+                    <h2>Uma descoberta interessante</h2>
+                    <p>É impressionante como sempre existe alguma coisa nova para aprender. Que descoberta recente chamou a sua atenção?</p>
+                    <img class="post-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" alt="Placa eletrônica com componentes tecnológicos">
+                    <div class="post-actions">
+                        <button type="button" class="btn-like" aria-pressed="false">♡ Curtir <span class="like-count">21</span></button>
+                        <button type="button" class="btn-comment">Comentar</button>
+                        <span class="post-category">Notícias</span>
+                    </div>
+                    <div class="inline-comments" hidden></div>
+                </article>
+            </section>
+            <p class="empty-message" id="mensagem-vazia" hidden>Nenhuma publicação encontrada para essa categoria ou pesquisa.</p>
+        </section>
+
+        <aside class="sidebar sidebar-right">
+            <section class="sidebar-panel">
+                <h2>Em destaque</h2>
+                <a class="highlight-link" href="posts.html"><strong>Conversas da comunidade</strong><span>Veja as publicações e participe dos debates.</span></a>
+                <a class="highlight-link" href="posts.html"><strong>Compartilhe algo novo</strong><span>Uma ideia pode iniciar uma boa conversa.</span></a>
+                <a class="highlight-link" href="configuracoes.html"><strong>Regras da comunidade</strong><span>Ajude a manter um espaço respeitoso.</span></a>
+            </section>
+            <section class="sidebar-panel community-note">
+                <h2>Um espaço para todos</h2>
+                <p>Respeite as opiniões, mantenha as conversas construtivas e aproveite a comunidade.</p>
+            </section>
+        </aside>
+    </main>
+
+    <dialog id="criar-dialog">
+        <button type="button" class="close-dialog" id="btn-fechar-criacao" aria-label="Fechar">×</button>
+        <h2>Criar publicação</h2>
+        <form id="form-criar-post">
+            <label for="titulo-post">Título:</label>
+            <input type="text" id="titulo-post" maxlength="100" required>
+            <label for="conteudo-post">Conteúdo:</label>
+            <textarea id="conteudo-post" maxlength="5000" required></textarea>
+            <label for="categoria-post">Categoria:</label>
+            <select id="categoria-post">
+                <option>Discussão</option><option>Notícias</option><option>Dúvidas</option><option>Memes</option>
+            </select>
+            <label for="imagem-post">Imagem (opcional):</label>
+            <input type="file" id="imagem-post" accept="image/*">
+            <div class="dialog-actions">
+                <button type="submit">Publicar</button>
+                <button type="button" class="secondary-button" id="btn-cancelar-criacao">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer>
+        <p>Fórum Teste · Protótipo de HTML, CSS e JavaScript</p>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>
